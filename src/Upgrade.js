@@ -24,7 +24,7 @@ export default function Main(props) {
 
   return (
     <Grid.Column width={8}>
-      <h1>Upgrade Runtime</h1>
+      <h1>Upgrade Parachain Runtime</h1>
       <Form>
         <Form.Field>
           <Input
@@ -37,12 +37,12 @@ export default function Main(props) {
         </Form.Field>
         <Form.Field style={{ textAlign: 'center' }}>
           <TxButton
-            label="Upgrade"
+            label="Apply Upgrade"
             type="UNCHECKED-SUDO-TX"
             setStatus={setStatus}
             attrs={{
               palletRpc: 'system',
-              callable: 'setCode',
+              callable: 'applyAuthorizeUpgrade',
               inputParams: [proposal],
               paramFields: [true],
             }}
